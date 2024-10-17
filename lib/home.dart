@@ -31,6 +31,21 @@ class _myHomepageState extends State<myHomepage> {
           ),
         ),
       ),
+      drawer: Drawer(
+        child: ListView(
+          children: [
+            DrawerHeader(decoration: BoxDecoration(color: Colors.amber),child: Text("Drawer Header"),),
+            ListTile(title: Text("Profile",),onTap: (){
+              // Then close the drawer
+              Navigator.pop(context);
+            },),
+            ListTile(title: Text("Setting"),onTap: (){
+              // Then close the drawer
+              Navigator.pop(context);
+            },),
+          ],
+        ),
+      ),
       body: Container(
         child: Column(
           children: [
@@ -51,8 +66,7 @@ class _myHomepageState extends State<myHomepage> {
   }
 
   void getValue()async {
-
-    var prefs =await SharedPreferences.getInstance();
+     var prefs =await SharedPreferences.getInstance();
      var getname = prefs.getString(splsscreen.KEY_LOGIN);
      emailvalue = getname ?? "No value saved";
 
