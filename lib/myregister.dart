@@ -93,19 +93,21 @@ class _MyregisterState extends State<Myregister> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                  Text("Already have a account?"),
-                  InkWell(
-                      onTap: () {
-                        Navigator.pushReplacement(context,
-                            MaterialPageRoute(builder: (context) => Mylogin()));
-                      },
-                      child: Text(
-                        "\tLogin",
-                        style:
-                        TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
-                      ))
-                ],),
-
+                    Text("Already have a account?"),
+                    InkWell(
+                        onTap: () {
+                          Navigator.pushReplacement(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => Mylogin()));
+                        },
+                        child: Text(
+                          "\tLogin",
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold, fontSize: 15),
+                        ))
+                  ],
+                ),
               ],
             ),
           ),

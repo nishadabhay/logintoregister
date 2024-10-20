@@ -14,9 +14,9 @@ class Mylogin extends StatefulWidget {
 class _MyloginState extends State<Mylogin> {
   var emailcontroller = TextEditingController();
   final _formKey = GlobalKey<FormState>();
+
   @override
   Widget build(BuildContext context) {
-
     return Container(
       decoration: BoxDecoration(
           image: DecorationImage(
@@ -47,19 +47,18 @@ class _MyloginState extends State<Mylogin> {
                       height: 40,
                     ),
                     TextFormField(
-
                       controller: emailcontroller,
                       decoration: InputDecoration(
                           hintText: "Email",
-
                           border: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(10))),
                       keyboardType: TextInputType.emailAddress,
-                      validator: (value){
-                        if(value == null || value.isEmpty){
+                      validator: (value) {
+                        if (value == null || value.isEmpty) {
                           return 'Please enter email';
                         }
-                        if (!RegExp(r'^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$').hasMatch(value)) {
+                        if (!RegExp(r'^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$')
+                            .hasMatch(value)) {
                           return 'Please enter a valid email';
                         }
                         return null;
@@ -77,19 +76,23 @@ class _MyloginState extends State<Mylogin> {
                     ),
                     SizedBox(height: 20),
                     ElevatedButton(
-                        onPressed: ()async {
-                          if(_formKey.currentState!. validate()){
+                        onPressed: () async {
+                          if (_formKey.currentState!.validate()) {
                             var email = emailcontroller.text.toString();
                             var prefs = await SharedPreferences.getInstance();
-                            var checkvalue = prefs.setBool(splsscreen.KEY_LOGIN,true);
-                            if(email != null){
-                              Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=> myHomepage()));
-
-                            }else{
-                              ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("Faild to store data")));
+                            var checkvalue =
+                                prefs.setBool(splsscreen.KEY_LOGIN, true);
+                            if (email != null) {
+                              Navigator.pushReplacement(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => myHomepage()));
+                            } else {
+                              ScaffoldMessenger.of(context).showSnackBar(
+                                  SnackBar(
+                                      content: Text("Faild to store data")));
                             }
                           }
-
                         },
                         child: Center(child: Text("Login"))),
                     SizedBox(
@@ -104,7 +107,8 @@ class _MyloginState extends State<Mylogin> {
                               Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                      builder: (context) => const Myregister()));
+                                      builder: (context) =>
+                                          const Myregister()));
                             },
                             child: Text(
                               "\tRegisterNow",
