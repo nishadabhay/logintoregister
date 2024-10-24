@@ -82,6 +82,7 @@ class _MyloginState extends State<Mylogin> {
                             var prefs = await SharedPreferences.getInstance();
                             var checkvalue =
                                 prefs.setBool(splsscreen.KEY_LOGIN, true);
+                            prefs.setString("user_email", email);
                             if (email != null) {
                               Navigator.pushReplacement(
                                   context,
