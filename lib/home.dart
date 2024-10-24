@@ -151,8 +151,7 @@ class _myHomepageState extends State<myHomepage> {
                     SizedBox(height: 10,),
                     Container(
                       child: RoundedButton(
-                        btnName: "PLAY",
-                        icon: Icon(Icons.doorbell),
+                        btnName: "Subscribe",
                         callBack: () {
                           print("Abhay!!!!!!!!");
                         },
@@ -172,8 +171,19 @@ class _myHomepageState extends State<myHomepage> {
                             TextStyle(fontSize: 50, fontWeight: FontWeight.w700),
                       ),
                     ),
+                    SizedBox(height: 10,),
+                    Container(
+                      child: RoundedButton(
+                        btnName: "Logout",
+                        callBack: () {
+                          print("Abhay!!!!!!!!");
+                        },
+                        textStyle:
+                            TextStyle(fontSize: 50, fontWeight: FontWeight.w700),
+                      ),
+                    ),
                   ],
-                ))
+                )),
           ],
         ),
       ),
