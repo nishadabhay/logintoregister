@@ -43,6 +43,9 @@ dependencies:
   # Api depency
   http: ^1.2.2
 
+  # Api integration using Dio Package
+  dio: ^5.7.0
+
 dev_dependencies:
   flutter_test:
     sdk: flutter

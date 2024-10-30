@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:lession1/drawerpages/language.dart';
 import 'package:lession1/loginpage.dart';
 import 'package:lession1/splsscreen.dart';
 import 'package:get/get.dart';
@@ -15,6 +16,9 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
         title: 'Flutter Demo',
+        locale: Locale('en' ,'US'),
+        translations: Language(),
+        fallbackLocale: Locale('en', 'US'),
         theme: ThemeData(
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
           useMaterial3: true,

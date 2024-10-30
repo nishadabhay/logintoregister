@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:lession1/Custom%20files/roundedbtn.dart';
 import 'package:lession1/drawerpages/profile.dart';
 import 'package:lession1/drawerpages/setting.dart';
+import 'package:lession1/drawerpages/translation.dart';
 import 'package:lession1/loginpage.dart';
 import 'package:lession1/splsscreen.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -44,13 +45,11 @@ class _myHomepageState extends State<myHomepage> {
               child: Text(emailvalue),
             ),
             ListTile(
-              title: Text(
-                "Profile",
-              ),
+              title: Text("Profile",),
               leading: Icon(Icons.person),
               onTap: () {
                 // Then close the drawer
-                Navigator.pushReplacement(context,
+                Navigator.push(context,
                     MaterialPageRoute(builder: (context) => Myprofile()));
               },
             ),
@@ -58,8 +57,23 @@ class _myHomepageState extends State<myHomepage> {
               title: Text("Setting"),
               leading: Icon(Icons.settings),
               onTap: () {
-                // Then close the drawer
-                Navigator.pushReplacement(context,
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => MySetting()));
+              },
+            ),
+            ListTile(
+              title: Text("Language"),
+              leading: Icon(Icons.ac_unit),
+              onTap: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => MyTranslation()));
+              },
+            ),
+            ListTile(
+              title: Text("Camera"),
+              leading: Icon(Icons.add_a_photo),
+              onTap: () {
+                Navigator.push(context,
                     MaterialPageRoute(builder: (context) => MySetting()));
               },
             ),
@@ -144,22 +158,28 @@ class _myHomepageState extends State<myHomepage> {
                         callBack: () {
                           print("Abhay!!!!!!!!");
                         },
-                        textStyle:
-                            TextStyle(fontSize: 50, fontWeight: FontWeight.w700,color: Colors.lightGreen),
+                        textStyle: TextStyle(
+                            fontSize: 50,
+                            fontWeight: FontWeight.w700,
+                            color: Colors.lightGreen),
                       ),
                     ),
-                    SizedBox(height: 10,),
+                    SizedBox(
+                      height: 10,
+                    ),
                     Container(
                       child: RoundedButton(
                         btnName: "Subscribe",
                         callBack: () {
                           print("Abhay!!!!!!!!");
                         },
-                        textStyle:
-                            TextStyle(fontSize: 50, fontWeight: FontWeight.w700),
+                        textStyle: TextStyle(
+                            fontSize: 50, fontWeight: FontWeight.w700),
                       ),
                     ),
-                    SizedBox(height: 10,),
+                    SizedBox(
+                      height: 10,
+                    ),
                     Container(
                       child: RoundedButton(
                         btnName: "Login",
@@ -167,19 +187,21 @@ class _myHomepageState extends State<myHomepage> {
                         callBack: () {
                           print("Abhay!!!!!!!!");
                         },
-                        textStyle:
-                            TextStyle(fontSize: 50, fontWeight: FontWeight.w700),
+                        textStyle: TextStyle(
+                            fontSize: 50, fontWeight: FontWeight.w700),
                       ),
                     ),
-                    SizedBox(height: 10,),
+                    SizedBox(
+                      height: 10,
+                    ),
                     Container(
                       child: RoundedButton(
                         btnName: "Logout",
                         callBack: () {
                           print("Abhay!!!!!!!!");
                         },
-                        textStyle:
-                            TextStyle(fontSize: 50, fontWeight: FontWeight.w700),
+                        textStyle: TextStyle(
+                            fontSize: 50, fontWeight: FontWeight.w700),
                       ),
                     ),
                   ],
