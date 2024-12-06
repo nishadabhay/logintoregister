@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:lession1/Custom%20files/roundedbtn.dart';
+import 'package:lession1/drawerpages/camera.dart';
 import 'package:lession1/drawerpages/profile.dart';
 import 'package:lession1/drawerpages/setting.dart';
 import 'package:lession1/drawerpages/translation.dart';
@@ -74,7 +75,7 @@ class _myHomepageState extends State<myHomepage> {
               leading: Icon(Icons.add_a_photo),
               onTap: () {
                 Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => MySetting()));
+                    MaterialPageRoute(builder: (context) => Mycamera()));
               },
             ),
             ListTile(),

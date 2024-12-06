@@ -1,4 +1,6 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:lession1/Custom%20files/custom_button.dart';
 import 'package:lession1/loginpage.dart';
 
 class Myregister extends StatefulWidget {
@@ -8,7 +10,21 @@ class Myregister extends StatefulWidget {
   State<Myregister> createState() => _MyregisterState();
 }
 
+
+
 class _MyregisterState extends State<Myregister> {
+  final emailController = TextEditingController();
+  final passwordController = TextEditingController();
+
+  FirebaseAuth _auth = FirebaseAuth.instance;
+  @override
+  void dispose() {
+    // TODO: implement dispose
+    emailController.dispose();
+    passwordController.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -43,6 +59,7 @@ class _MyregisterState extends State<Myregister> {
                   height: 20,
                 ),
                 TextField(
+                  controller: emailController,
                   decoration: InputDecoration(
                       hintText: 'Email',
                       border: OutlineInputBorder(
@@ -61,6 +78,7 @@ class _MyregisterState extends State<Myregister> {
                   height: 20,
                 ),
                 TextField(
+                  controller: passwordController,
                   obscureText: true,
                   decoration: InputDecoration(
                       hintText: 'Password',
@@ -79,14 +97,20 @@ class _MyregisterState extends State<Myregister> {
                 ),
                 SizedBox(
                   height: 20,
-                ),
-                ElevatedButton(
-                    onPressed: () {},
-                    child: Center(
-                        child: Text(
-                      "Register",
-                      style: TextStyle(fontWeight: FontWeight.bold),
-                    ))),
+                 ),
+                // ElevatedButton(
+                //     onPressed: () {
+                //
+                //       _auth.createUserWithEmailAndPassword(
+                //           email: emailController.text.toString(),
+                //           password: passwordController.text.toString());
+                //     },
+                //     child: Center(
+                //         child: Text(
+                //       "Register",
+                //       style: TextStyle(fontWeight: FontWeight.bold),
+                //     ))),
+                CustomButton(action: (){}, title: "Register", ),
                 SizedBox(
                   height: 30,
                 ),
